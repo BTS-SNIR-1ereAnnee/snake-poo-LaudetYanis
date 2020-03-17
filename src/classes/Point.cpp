@@ -8,11 +8,13 @@ using namespace std;
 Point::Point()
 {
     m_x = m_y = 10;
+	cout<<"quelque chose"<< endl;
 }
 Point::Point(int x, int y)
 {
     this->m_x = x;
     this->m_y = y;
+	cout<<"quelque chose"<< endl;
 }
 
 void Point::setPoint(int x, int y)
@@ -23,12 +25,12 @@ void Point::setPoint(int x, int y)
 
 void Point::moveDown()
 {
-    m_y--;
+    m_y++;
 }
 
 void Point::moveUp()
 {
-    m_y++;
+    m_y--;
 }
 
 void Point::moveRight()
@@ -65,14 +67,14 @@ void Point::setY(int val)
 void Point::drawPoint()
 {
     Board *b;
-    b = Board::getInstance();
+    b = Board::getInstance(); // dessine les points 
     b->dessinerPoint(*this);
 }
 
-void Point::erasePoint()
+void Point::erasePoint()  
 {
     Board *b;
-    b = Board::getInstance();
+    b = Board::getInstance(); //efface les points 
     b->effacerPoint(*this);
 }
 
@@ -80,7 +82,9 @@ void Point::debug()
 {
     cout << "(" << this->m_x << "," << this->m_y << ")";
 }
+
 Point::~Point()
 {
     //dtor
 }
+
